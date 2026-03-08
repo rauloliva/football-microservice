@@ -1,0 +1,42 @@
+openapi: 3.1.0
+info:
+  title: Title
+  description: API Spec for football-service endpoints
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:8080/'
+    description: API Endpoints for football service
+paths:
+  /client-api/v1/countries/:
+    get:
+      summary: Consults all countries
+      description: Fetches all available countries
+      operationId: getCountries
+      tags:
+        - Country
+      responses:
+        '200':
+          $ref: "#/components/responses/Countries"
+
+components:
+  responses:
+    Countries:
+      description: A list of countries
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Country'
+
+  schemas:
+    Country:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: string
+        name:
+          type: string
