@@ -4,4 +4,4 @@ spring:
 
 football:
   third-party:
-    auth-token: 8c67059dcc2a40958579971537d5a4d9
+    auth-token: ${FOOTBALL-DATA-TOKEN}
