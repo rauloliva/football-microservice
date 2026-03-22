@@ -35,8 +35,13 @@ components:
       required:
         - id
         - name
+        - countryCode
       properties:
         id:
-          type: string
+          type: integer
         name:
+          type: string
+        countryCode:
+          type: string
+        flag:
           type: string

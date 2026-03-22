@@ -21,20 +21,20 @@
         <java.version>25</java.version>
     </properties>
     <dependencies>
-        <!-- Conexión con tu otro módulo -->
+        <!-- Connection to football-api module -->
         <dependency>
             <groupId>com.rauloliva</groupId>
             <artifactId>football-api</artifactId>
             <version>${project.version}</version>
         </dependency>
 
-        <!-- Necesario para los controladores y el servidor embebido -->
+        <!-- Required for the controllers and embedded server -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Requerido para procesar las validaciones del código generado -->
+        <!-- Required to process validation on generated code -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>

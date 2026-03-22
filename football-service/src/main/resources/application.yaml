@@ -1,3 +1,7 @@
 spring:
   application:
     name: football-service
+
+football:
+  third-party:
+    auth-token: 8c67059dcc2a40958579971537d5a4d9
