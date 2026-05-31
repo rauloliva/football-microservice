@@ -36,6 +36,7 @@ components:
         - id
         - name
         - countryCode
+        - flag
       properties:
         id:
           type: integer
@@ -45,3 +46,16 @@ components:
           type: string
         flag:
           type: string
+
+    Area:
+      type: object
+      required:
+        - id
+        - childAreas
+      properties:
+        id:
+          type: integer
+        childAreas:
+          type: array
+          items:
+            $ref: "#/components/schemas/Country"

@@ -1,7 +1,7 @@
-package com.rauloliva.footballservice.services.impl;
+package com.rauloliva.footballservice.service.impl;
 
 import com.rauloliva.football.dto.Country;
-import com.rauloliva.footballservice.services.AreaHttpService;
+import com.rauloliva.footballservice.service.AreaHttpService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,8 +17,7 @@ public class AreaService {
     private final AreaHttpService areaHttpService;
 
     public List<Country> getCountries() {
-        List<Country> countries = areaHttpService.fetchEuropeanCountries(2077L)
-                .childAreas();
+        List<Country> countries = areaHttpService.fetchEuropeanCountries(2077L).getChildAreas();
 
         log.debug("Total Countries: {}", countries.size());
 

@@ -2,7 +2,7 @@ package com.rauloliva.footballservice.api;
 
 import com.rauloliva.football.api.CountryApi;
 import com.rauloliva.football.dto.Country;
-import com.rauloliva.footballservice.services.impl.AreaService;
+import com.rauloliva.footballservice.service.impl.AreaService;
 
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
