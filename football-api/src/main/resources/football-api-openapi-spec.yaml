@@ -25,9 +25,7 @@ components:
       content:
         application/json:
           schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Country'
+            $ref: '#/components/schemas/Countries'
 
   schemas:
     Country:
@@ -46,6 +44,16 @@ components:
           type: string
         flag:
           type: string
+
+    Countries:
+      type: object
+      required:
+        - countries
+      properties:
+        countries:
+          type: array
+          items:
+            $ref: "#/components/schemas/Country"
 
     Area:
       type: object

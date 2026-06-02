@@ -1,6 +1,8 @@
 package com.rauloliva.footballservice.service.impl;
 
+import com.rauloliva.football.dto.Countries;
 import com.rauloliva.football.dto.Country;
+import com.rauloliva.footballservice.mapper.CountryMapper;
 import com.rauloliva.footballservice.service.AreaHttpService;
 
 import lombok.RequiredArgsConstructor;
@@ -15,21 +17,14 @@ import java.util.List;
 public class AreaService {
 
     private final AreaHttpService areaHttpService;
+    private final CountryMapper countryMapper;
 
-    public List<Country> getCountries() {
-        List<Country> countries = areaHttpService.fetchEuropeanCountries(2077L).getChildAreas();
+    public Countries getCountries() {
+        List<Country> countriesList = areaHttpService.fetchEuropeanCountries(2077L)
+                .getChildAreas();
 
-        log.debug("Total Countries: {}", countries.size());
+        log.debug("Total Countries: {}", countriesList.size());
 
-        return countries.stream()
-                .map(c -> {
-                    String name = c.getName();
-                    String flag = c.getFlag();
-                    if (flag == null) {
-                        c.setFlag(String.format(
-                                "https://en.wikipedia.org/wiki/%s#/media/File:Flag_of_%s.svg", name, name));
-                    }
-                    return c;
-                }).toList();
+        return countryMapper.mapToCountries(countriesList);
     }
 }
