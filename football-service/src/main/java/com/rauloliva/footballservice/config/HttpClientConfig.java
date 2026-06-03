@@ -1,6 +1,6 @@
 package com.rauloliva.footballservice.config;
 
-import com.rauloliva.footballservice.service.AreaHttpService;
+import com.rauloliva.footballservice.client.AreaHttpService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

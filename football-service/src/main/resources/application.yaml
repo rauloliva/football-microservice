@@ -5,3 +5,8 @@ spring:
 football:
   third-party:
     auth-token: ${FOOTBALL-DATA-TOKEN}
+
+logging:
+  level:
+    root: INFO
+    com.rauloliva.footballservice: DEBUG

@@ -1,4 +1,4 @@
-package com.rauloliva.footballservice.service;
+package com.rauloliva.footballservice.client;
 
 import com.rauloliva.football.dto.Area;
 
