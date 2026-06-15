@@ -15,8 +15,8 @@ public class CountryController implements CountryApi {
     private final CountryServiceImpl countryService;
 
     @Override
-    public ResponseEntity<Countries> getCountries() {
-        return ResponseEntity.ok(countryService.getCountries());
+    public ResponseEntity<Countries> getCountries(Long areaId) {
+        return ResponseEntity.ok(countryService.getCountries(areaId));
     }
 
 

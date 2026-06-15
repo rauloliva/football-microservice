@@ -7,8 +7,15 @@ servers:
   - url: 'http://localhost:8080/'
     description: API Endpoints for football service
 paths:
-  /client-api/v1/countries/:
+  /client-api/v1/countries/{areaId}:
     get:
+      parameters:
+        - name: areaId
+          in: path
+          required: true
+          description: The area id which the countries belong to
+          schema:
+            type: long
       summary: Consults all countries
       description: Fetches all available countries
       operationId: getCountries

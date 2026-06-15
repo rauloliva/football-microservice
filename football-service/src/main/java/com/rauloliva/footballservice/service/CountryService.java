@@ -4,5 +4,5 @@ import com.rauloliva.football.dto.Countries;
 
 public interface CountryService {
 
-    Countries getCountries();
+    Countries getCountries(Long areaId);
 }
