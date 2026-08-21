@@ -7,8 +7,15 @@ servers:
   - url: 'http://localhost:8080/'
     description: API Endpoints for football service
 paths:
-  /client-api/v1/countries/:
+  /client-api/v1/countries/{areaId}:
     get:
+      parameters:
+        - name: areaId
+          in: path
+          required: true
+          description: The area id which the countries belong to
+          schema:
+            type: long
       summary: Consults all countries
       description: Fetches all available countries
       operationId: getCountries
@@ -25,9 +32,7 @@ components:
       content:
         application/json:
           schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Country'
+            $ref: '#/components/schemas/Countries'
 
   schemas:
     Country:
@@ -36,6 +41,7 @@ components:
         - id
         - name
         - countryCode
+        - flag
       properties:
         id:
           type: integer
@@ -45,3 +51,26 @@ components:
           type: string
         flag:
           type: string
+
+    Countries:
+      type: object
+      required:
+        - countries
+      properties:
+        countries:
+          type: array
+          items:
+            $ref: "#/components/schemas/Country"
+
+    Area:
+      type: object
+      required:
+        - id
+        - childAreas
+      properties:
+        id:
+          type: integer
+        childAreas:
+          type: array
+          items:
+            $ref: "#/components/schemas/Country"

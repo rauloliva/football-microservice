@@ -1,6 +1,6 @@
 package com.rauloliva.footballservice.config;
 
-import com.rauloliva.footballservice.services.AreaHttpService;
+import com.rauloliva.footballservice.client.AreaHttpService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,6 +20,7 @@ public class HttpClientConfig {
     public RestClientHttpServiceGroupConfigurer customHeadersConfigurer() {
         return groups -> groups.forEachClient((group, clientBuilder) -> {
             clientBuilder.defaultHeader("X-Auth-Token", authToken);
+            clientBuilder.defaultHeader("User-Agent", "Mozilla/5.0");
         });
     }
 }

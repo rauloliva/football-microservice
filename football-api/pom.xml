@@ -6,22 +6,21 @@
     <parent>
         <groupId>com.rauloliva</groupId>
         <artifactId>football-microservice</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.1-SNAPSHOT-1</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>football-api</artifactId>
     <name>football-api</name>
-
-    <version>0.0.1-SNAPSHOT</version>
     <description>football-apis</description>
-    <url/>
-    <developers>
-        <developer/>
-    </developers>
 
     <properties>
         <java.version>25</java.version>
+        <openapi-generator-maven-plugin.version>7.8.0</openapi-generator-maven-plugin.version>
+
+        <!-- dependencies versions -->
+        <jackson-databind-nullable.version>0.2.6</jackson-databind-nullable.version>
+        <swagger-annotations.version>2.2.15</swagger-annotations.version>
     </properties>
 
     <dependencies>
@@ -32,12 +31,12 @@
         <dependency>
             <groupId>org.openapitools</groupId>
             <artifactId>jackson-databind-nullable</artifactId>
-            <version>0.2.6</version>
+            <version>${jackson-databind-nullable.version}</version>
         </dependency>
         <dependency>
             <groupId>io.swagger.core.v3</groupId>
             <artifactId>swagger-annotations</artifactId>
-            <version>2.2.15</version>
+            <version>${swagger-annotations.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -50,7 +49,7 @@
             <plugin>
                 <groupId>org.openapitools</groupId>
                 <artifactId>openapi-generator-maven-plugin</artifactId>
-                <version>7.8.0</version>
+                <version>${openapi-generator-maven-plugin.version}</version>
                 <executions>
                     <execution>
                         <goals>

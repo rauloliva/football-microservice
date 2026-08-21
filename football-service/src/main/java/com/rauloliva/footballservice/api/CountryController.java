@@ -1,24 +1,22 @@
 package com.rauloliva.footballservice.api;
 
 import com.rauloliva.football.api.CountryApi;
-import com.rauloliva.football.dto.Country;
-import com.rauloliva.footballservice.services.impl.AreaService;
+import com.rauloliva.football.dto.Countries;
+import com.rauloliva.footballservice.service.impl.CountryServiceImpl;
 
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 @RestController
 @AllArgsConstructor
 public class CountryController implements CountryApi {
 
-    private final AreaService areaService;
+    private final CountryServiceImpl countryService;
 
     @Override
-    public ResponseEntity<List<Country>> getCountries() {
-        return ResponseEntity.ok(areaService.getCountries());
+    public ResponseEntity<Countries> getCountries(Long areaId) {
+        return ResponseEntity.ok(countryService.getCountries(areaId));
     }
 
 
