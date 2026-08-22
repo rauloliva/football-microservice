@@ -4,6 +4,7 @@ spring:
 
 football:
   third-party:
+    base-url: "https://api.football-data.org/v4"
     auth-token: ${FOOTBALL-DATA-TOKEN}
 
 logging:
