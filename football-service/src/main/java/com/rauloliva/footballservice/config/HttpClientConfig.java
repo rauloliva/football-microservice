@@ -16,9 +16,13 @@ public class HttpClientConfig {
     @Value("${football.third-party.auth-token}")
     private String authToken;
 
+    @Value("${football.third-party.base-url}")
+    private String baseUrl;
+
     @Bean
     public RestClientHttpServiceGroupConfigurer customHeadersConfigurer() {
         return groups -> groups.forEachClient((group, clientBuilder) -> {
+            clientBuilder.baseUrl(baseUrl);
             clientBuilder.defaultHeader("X-Auth-Token", authToken);
             clientBuilder.defaultHeader("User-Agent", "Mozilla/5.0");
         });
